@@ -22,7 +22,7 @@ require (
 	github.com/oxequa/realize v2.0.2+incompatible // indirect
 	github.com/rogpeppe/go-internal v1.4.0 // indirect
 	github.com/satori/go.uuid v1.2.0 // indirect
-	github.com/sirupsen/logrus v1.4.2 // indirect
+	github.com/sirupsen/logrus v1.4.2
 	github.com/stretchr/objx v0.2.0 // indirect
 	github.com/valyala/fasthttp v1.5.0
 	go.opencensus.io v0.22.1 // indirect
@@ -34,7 +34,7 @@ require (
 	golang.org/x/sync v0.0.0-20190911185100-cd5d95a43a6e // indirect
 	golang.org/x/sys v0.0.0-20190927073244-c990c680b611 // indirect
 	golang.org/x/time v0.0.0-20190921001708-c4c64cad1fd0 // indirect
-	google.golang.org/api v0.10.0 // indirect
+	google.golang.org/api v0.10.0
 	google.golang.org/appengine v1.6.4 // indirect
 	google.golang.org/genproto v0.0.0-20190927181202-20e1ac93f88c // indirect
 	google.golang.org/grpc v1.24.0 // indirect
