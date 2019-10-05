@@ -3,10 +3,7 @@
         <div class="container">
             <div class="block">
                 <div class="block video-block" v-for="item in items">
-                    <AppVideo
-                            :item="item"
-                            :video-id="item.id"
-                    />
+                    <AppVideo :item="item" :video-id="item.id"/>
                 </div>
             </div>
 

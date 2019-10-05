@@ -4,7 +4,7 @@
       <article class="media">
         <div class="media-left">
           <figure class="image is-220x120">
-            <img :src="item.snippet.thumbnails.url" alt="Image">
+            <img :src="item.snippet.thumbnails.medium.url" alt="Image">
           </figure>
         </div>
         <div class="media-content">
