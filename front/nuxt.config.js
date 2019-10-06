@@ -1,66 +1,68 @@
 export default {
-  mode: 'universal',
-  /*
-  ** Headers of the page
-  */
-  head: {
-    title: process.env.npm_package_name || '',
-    meta: [
-      {charset: 'utf-8'},
-      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {hid: 'description', name: 'description', content: process.env.npm_package_description || ''}
-    ],
-    link: [
-      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
-    ]
-  },
-  /*
-  ** Customize the progress-bar color
-  */
-  loading: {color: '#fff'},
-  /*
-  ** Global CSS
-  */
-  css: [],
-  /*
-  ** Plugins to load before mounting the App
-  */
-  plugins: [
-      '~/plugins/vue-youtube'
-  ],
-  /*
-  ** Nuxt.js dev-modules
-  */
-  buildModules: [],
-  /*
-  ** Nuxt.js modules
-  */
-  modules: [
-    // Doc: https://github.com/nuxt-community/modules/tree/master/packages/bulma
-    '@nuxtjs/bulma',
-    '@nuxtjs/axios',
-  ],
-  /*
-  ** Build configuration
-  */
-  build: {
-    postcss: {
-      preset: {
-        features: {
-          customProperties: false
-        }
-      }
+    mode: 'universal',
+    /*
+    ** Headers of the page
+    */
+    head: {
+        title: process.env.npm_package_name || '',
+        meta: [
+            {charset: 'utf-8'},
+            {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+            {hid: 'description', name: 'description', content: process.env.npm_package_description || ''}
+        ],
+        link: [
+            {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
+        ]
     },
     /*
-    ** You can extend webpack config here
+    ** Customize the progress-bar color
     */
-    extend(config, ctx) {
-    }
-  },
-  axios: {
-    baseURL: 'http://127.0.0.1:8081/'
-  },
-  proxy: {
-    '/api': '/'
-  },
+    loading: {color: '#fff'},
+    /*
+    ** Global CSS
+    */
+    css: [],
+    /*
+    ** Plugins to load before mounting the App
+    */
+    plugins: [
+        '~/plugins/vue-youtube',
+        '~/plugins/cookie-to-state'
+    ],
+    /*
+    ** Nuxt.js dev-modules
+    */
+    buildModules: [],
+    /*
+    ** Nuxt.js modules
+    */
+    modules: [
+        // Doc: https://github.com/nuxt-community/modules/tree/master/packages/bulma
+        '@nuxtjs/bulma',
+        '@nuxtjs/axios',
+        'cookie-universal-nuxt',
+    ],
+    /*
+    ** Build configuration
+    */
+    build: {
+        postcss: {
+            preset: {
+                features: {
+                    customProperties: false
+                }
+            }
+        },
+        /*
+        ** You can extend webpack config here
+        */
+        extend(config, ctx) {
+        }
+    },
+    axios: {
+        baseURL: 'http://127.0.0.1:8081/'
+    },
+    proxy: {
+        '/api': '/'
+    },
 }

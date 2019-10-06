@@ -1,4 +1,5 @@
 import {createRequestClient} from "./request-client";
+import firebase from "~/plugins/firebase"
 
 export const state = () => ({
     items: [],
@@ -7,6 +8,7 @@ export const state = () => ({
     meta: {},
     searchItems: [],
     searchMeta: {},
+    token: '',
 })
 
 export const actions = {
@@ -35,6 +37,20 @@ export const actions = {
         const client = createRequestClient(this.$axios)
         const res = await client.get(payload.uri, payload.params)
         commit('mutateSearchVideos', res)
+    },
+
+    async signUp({commit, dispatch}, payload) {
+        await firebase.auth().createUserWithEmailAndPassword(
+            payload.email, payload.password)
+        const res = await firebase.auth().signInWithEmailAndPassword(
+            payload.email, payload.password)
+        const token = await res.user.getIdToken()
+        this.$cookies.set('jwt_token', token)
+        commit('mutateToken', token)
+        this.app.router.push('/')
+    },
+    async setToken({commit}, payload) {
+        commit('mutateToken', payload)
     }
 }
 
@@ -54,6 +70,9 @@ export const mutations = {
         state.searchItems = payload.items ?
             state.searchItems.concat(payload.items) : []
         state.searchMeta = payload
+    },
+    mutateToken(state, payload) {
+        state.token = payload
     },
 }
 
