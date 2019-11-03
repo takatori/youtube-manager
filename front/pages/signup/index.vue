@@ -29,7 +29,7 @@
                         <div class="control">
                             <button
                                     class="button is-link"
-                                    @clikc="signup">
+                                    @click="signUp">
                                 Sign up
                             </button>
                         </div>
@@ -50,9 +50,9 @@
         },
         methods: {
             signUp() {
-                let user = {
+                const user = {
                     email: this.email,
-                    passowrd: this.password
+                    password: this.password
                 }
                 this.$store.dispatch('signUp', user)
             }

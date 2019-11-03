@@ -27,7 +27,7 @@ export default {
     */
     plugins: [
         '~/plugins/vue-youtube',
-        '~/plugins/cookie-to-state'
+        '~/plugins/cookies-to-state'
     ],
     /*
     ** Nuxt.js dev-modules
@@ -40,7 +40,7 @@ export default {
         // Doc: https://github.com/nuxt-community/modules/tree/master/packages/bulma
         '@nuxtjs/bulma',
         '@nuxtjs/axios',
-        'cookie-universal-nuxt',
+        'cookie-universal-nuxt'
     ],
     /*
     ** Build configuration
