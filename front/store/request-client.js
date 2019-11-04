@@ -11,6 +11,10 @@ export class RequestClient {
             `${uri}?${queryString}` : uri;
         return await this.axios.$get(query)
     }
+
+    async post(uri) {
+        return await this.axios.$post(uri)
+    }
 }
 
 export function createRequestClient(axios) {

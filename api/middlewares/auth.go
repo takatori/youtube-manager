@@ -4,6 +4,7 @@ import (
 	"context"
 	"firebase.google.com/go/auth"
 	"github.com/labstack/echo"
+	"github.com/sirupsen/logrus"
 	"github.com/valyala/fasthttp"
 	"strings"
 )
@@ -20,6 +21,7 @@ func FirebaseGuard() echo.MiddlewareFunc {
 			authClient := c.Get("firebase").(*auth.Client)
 			jwtToken, err := verifyFirebaseIDToken(c, authClient)
 			if err != nil {
+				logrus.Error(err)
 				return c.JSON(fasthttp.StatusUnauthorized, "Not Authenticated")
 			}
 			c.Set("auth", jwtToken)
