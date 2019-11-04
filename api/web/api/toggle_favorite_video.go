@@ -28,8 +28,8 @@ func ToggleFavoriteVideo() echo.HandlerFunc {
 			dbs.DB.Create(&user)
 		}
 		favorite := models.Favorite{}
-		isFavorite := true
-		isNotFoundFavorite := dbs.DB.Table("favo").
+		isFavorite := false
+		isNotFoundFavorite := dbs.DB.Table("favorites").
 			Where(models.Favorite{UserId: user.ID, VideoId: videoId}).
 			First(&favorite).
 			RecordNotFound()

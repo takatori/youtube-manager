@@ -26,12 +26,11 @@ func GetVideo() echo.HandlerFunc {
 		if token != nil {
 			favorite := models.Favorite{}
 			isFavoriteNotFound := dbs.DB.Table("favorites").
-				Joins("INNER JOIN users ON user.id = favorites.user_id").
+				Joins("INNER JOIN users ON users.id = favorites.user_id").
 				Where(models.User{UID: token.UID}).
 				Where(models.Favorite{VideoId: videoId}).
 				First(&favorite).
 				RecordNotFound()
-			logrus.Debug("isFavoriteNotFound: ", isFavoriteNotFound)
 			if !isFavoriteNotFound {
 				isFavorite = true
 			}

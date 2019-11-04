@@ -7,6 +7,6 @@ type User struct {
 	UID       string    `json:"-"`
 	CreatedAt time.Time `json:"-"`
 	UpdatedAt time.Time `json:"-"`
-	DeletedAt time.Time `sql:"index"json:"-"`
+	DeletedAt *time.Time `sql:"index"json:"-"`
 	Favorites []Favorite
 }
