@@ -5,7 +5,7 @@ go 1.12
 require (
 	cloud.google.com/go/firestore v1.0.0 // indirect
 	cloud.google.com/go/storage v1.1.2 // indirect
-	firebase.google.com/go v3.10.0+incompatible // indirect
+	firebase.google.com/go v3.10.0+incompatible
 	github.com/creack/pty v1.1.9 // indirect
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
 	github.com/fatih/color v1.7.0 // indirect

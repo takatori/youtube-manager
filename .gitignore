@@ -13,3 +13,5 @@
 
 **/.env
 **/.idea
+
+api/service_account.json
