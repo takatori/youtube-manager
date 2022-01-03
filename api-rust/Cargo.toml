@@ -1,0 +1,14 @@
+[package]
+name = "youtube-manager"
+version = "0.1.0"
+authors = ["Satoshi Takatori <takatorix@gmail.com>"]
+edition = "2021"
+
+[dependencies]
+actix-web = "4.0.0-beta.18"
+google-youtube3 = "^2.0.8"
+hyper = "^0.14"
+hyper-rustls = "^0.22"
+serde = "^1.0"
+serde_json = "^1.0"
+yup-oauth2 = "^5.0"
